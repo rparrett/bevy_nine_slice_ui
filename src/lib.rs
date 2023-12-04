@@ -98,7 +98,7 @@ fn sync_nine_slice(
 }
 
 fn spawn_nine_slice(
-    nodes: Query<(Entity, &NineSliceTexture, &Node), Without<Handle<NineSliceMaterial>>>,
+    nodes: Query<(Entity, &NineSliceTexture, &Node), Changed<NineSliceTexture>>,
     images: Res<Assets<Image>>,
     mut cmd: Commands,
     mut materials: ResMut<Assets<NineSliceMaterial>>,
